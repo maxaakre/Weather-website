@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + ' Det är ' + body.currently.temperature + ' celcius utomhus. Det är ' + body.currently.precipProbability + '% chans för regn.')
+            callback(undefined, body.daily.data[0].summary + ' Det är ' + body.currently.temperature + ' celcius utomhus. Hösta tempraturen idag är ' + body.daily.data[0].temperatureHigh + ' Och den lägsta tempaturen idag är ' + body.daily.data[0].temperatureLow + ' . Det är ' + body.currently.precipProbability + '% chans för regn.')
         }
     })
 }
